@@ -92,8 +92,9 @@ gpgkey=http://packages.confluent.io/rpm/3.1/archive.key\n" | sudo tee /etc/yum.r
     cd release && \
     cmake3 -DCMAKE_BUILD_TYPE=release .. && \
     make && \
-    ctest3 && \
-    cpack3 -G RPM && \
+    ctest3
+RUN echo *************XXXXXXXXXXXXXXXXXXXx********************* 
+RUN cd /app/src/hindsight/release && cpack3 -G RPM && \
     sudo yum install -y /app/src/hindsight/release/hindsight*.rpm && \
 
     # Setup run directory
