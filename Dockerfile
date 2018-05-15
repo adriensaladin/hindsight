@@ -1,3 +1,8 @@
+FROM centos:7 as testmultilayer
+RUN echo test
+
+
+
 FROM centos:7
 
 ADD . /app/src/hindsight/
